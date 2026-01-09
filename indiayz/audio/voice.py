@@ -1,3 +1,5 @@
+# indiayz/audio/voice.py
+
 from indiayz.core.base import BaseModule
 
 
@@ -10,5 +12,5 @@ class Voice(BaseModule):
 
     @staticmethod
     def tts(text: str):
-        # Placeholder
-        print(f"[indiayz-voice] Speaking: {text}")
+        response = Voice._post("/audio/tts", {"text": text})
+        return response
